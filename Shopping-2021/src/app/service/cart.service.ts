@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  public cartItemList: any = [];
+  public cartItemList: any = ["a"];
   public productList = new BehaviorSubject<string>("");
   constructor() { }
   getProducts() {
@@ -13,16 +13,18 @@ export class CartService {
   }
 
   addToCart(product: any) {
-    console.log("aaa")
+    console.log("product", product)
     this.cartItemList.map((item: any) => {
+      console.log("c1", item)
       if (product.id === item.id) {
         item.quantity++;
-        console.log(item)
+        console.log("a1", item)
       } else {
-        console.log(this.cartItemList)
+        console.log("b1", item)
         this.cartItemList.push(product);
       }
     })
+    console.log("this.cartItemList", this.cartItemList)
     this.productList.next(this.cartItemList);
   }
 

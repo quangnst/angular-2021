@@ -1,0 +1,1 @@
+https://www.telerik.com/blogs/building-an-online-store-using-ngrx-store-and-angular
